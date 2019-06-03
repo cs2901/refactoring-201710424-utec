@@ -1,13 +1,10 @@
 double disabilityAmount() {
-  if (seniority < 2) {
-    return 0;
-  }
-  if (monthsDisabled > 12) {
-    return 0;
-  }
-  if (isPartTime) {
-    return 0;
-  }
-  // Compute the disability amount.
-  // ...
+    boolean isNotEligableForDisability() {
+      return seniority < 2 || monthsDisabled > 12 || isPartTime;
+    }
+    if (isNotEligableForDisability()) {
+        return 0;
+    }
+    // Compute the disability amount.
+    // ...
 }
